@@ -22,6 +22,7 @@ import Img from './img';
 import Overlay from './overlay';
 import Page from './page';
 import Qrcode from './qrcode';
+import Test from './test';
 import Text from './text';
 
 const ui: Record<string, any> = {
@@ -32,6 +33,7 @@ const ui: Record<string, any> = {
   img: Img,
   qrcode: Qrcode,
   overlay: Overlay,
+  test: Test,
 };
 
 export default ui;

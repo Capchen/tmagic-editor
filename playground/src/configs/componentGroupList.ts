@@ -39,6 +39,10 @@ export default [
         text: '二维码',
         type: 'qrcode',
       },
+      {
+        text: '测试',
+        type: 'test',
+      },
     ],
   },
   {

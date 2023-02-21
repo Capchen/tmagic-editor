@@ -20,9 +20,10 @@ export default {
   text: '请输入文本内容',
   multiple: true,
   style: {
-    width: '270',
-    height: '37.5',
+    width: '335',
+    height: '60',
     border: 0,
-    backgroundColor: '#fb6f00',
+    backgroundColor: '#1E57B0',
+    'border-radius': '60',
   },
 };

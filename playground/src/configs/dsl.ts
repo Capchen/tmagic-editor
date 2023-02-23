@@ -55,7 +55,7 @@ export default {
         right: '',
         bottom: '',
         width: '100%',
-        height: '667',
+        height: '1110',
         backgroundImage: '',
         backgroundColor: '#fff',
         backgroundRepeat: 'no-repeat',

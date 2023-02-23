@@ -23,5 +23,7 @@ export default {
   style: {
     width: '100',
     height: 'auto',
+    color: '#fff',
+    'font-size': 20,
   },
 };

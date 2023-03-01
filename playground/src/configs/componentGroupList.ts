@@ -51,6 +51,10 @@ export default [
         text: 'radio组',
         type: 'radiogroup',
       },
+      {
+        text: 'chenjian',
+        type: 'chenjiantest',
+      },
     ],
   },
   {

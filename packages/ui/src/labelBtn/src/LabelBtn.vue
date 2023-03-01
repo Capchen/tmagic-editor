@@ -1,8 +1,6 @@
-<!-- Test.vue -->
 <template>
-  <div>
-    <span>component:</span>
-    <span :style="{ color: config.color }">{{ config.text }}</span>
+  <div class="magic-ui-label-btn">
+    <span>{{ config.text }}</span>
   </div>
 </template>
 

@@ -43,6 +43,14 @@ export default [
         text: '测试',
         type: 'test',
       },
+      {
+        text: '标签按钮',
+        type: 'label',
+      },
+      {
+        text: 'radio组',
+        type: 'radiogroup',
+      },
     ],
   },
   {

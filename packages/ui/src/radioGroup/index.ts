@@ -16,30 +16,10 @@
  * limitations under the License.
  */
 
-import Button from './button';
-import Container from './container';
-import Img from './img';
-import LabelBtn from './labelBtn';
-import Overlay from './overlay';
-import Page from './page';
-import Qrcode from './qrcode';
-import Radio from './radio';
-import RadioGroup from './radioGroup';
-import Test from './test';
-import Text from './text';
+import RadioGroup from './src/index.vue';
 
-const ui: Record<string, any> = {
-  page: Page,
-  container: Container,
-  button: Button,
-  text: Text,
-  img: Img,
-  qrcode: Qrcode,
-  overlay: Overlay,
-  test: Test,
-  label: LabelBtn,
-  radiogroup: RadioGroup,
-  radio: Radio,
-};
+export { default as config } from './src/formConfig';
+export { default as value } from './src/initValue';
+export { default as event } from './src/event';
 
-export default ui;
+export default RadioGroup;

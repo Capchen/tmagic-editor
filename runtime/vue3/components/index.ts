@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-import ChenjianTest from './test-component/index';
+import ChenjianTest from './test-component';
 
 const ui: Record<string, any> = {
   chenjiantest: ChenjianTest,

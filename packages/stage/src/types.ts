@@ -22,6 +22,7 @@ import Core from '@tmagic/core';
 import type { Id, MApp, MContainer, MNode } from '@tmagic/schema';
 
 import { GuidesType, ZIndex } from './const';
+import DragResizeHelper from './DragResizeHelper';
 import StageCore from './StageCore';
 
 export type TargetElement = HTMLElement | SVGElement;
@@ -112,21 +113,23 @@ export interface StageMaskConfig {
 
 export interface StageDragResizeConfig {
   container: HTMLElement;
+  dragResizeHelper: DragResizeHelper;
   moveableOptions?: CustomizeMoveableOptions;
   disabledDragStart?: boolean;
   getRootContainer: GetRootContainer;
   getRenderDocument: GetRenderDocument;
   markContainerEnd: MarkContainerEnd;
   delayedMarkContainer: DelayedMarkContainer;
-  updateDragEl?: UpdateDragEl;
 }
 
 export interface StageMultiDragResizeConfig {
   container: HTMLElement;
+  dragResizeHelper: DragResizeHelper;
   multiMoveableOptions?: CustomizeMoveableOptions;
   getRootContainer: GetRootContainer;
   getRenderDocument: GetRenderDocument;
-  updateDragEl?: UpdateDragEl;
+  markContainerEnd: MarkContainerEnd;
+  delayedMarkContainer: DelayedMarkContainer;
 }
 
 export interface DragResizeHelperConfig {
@@ -190,6 +193,12 @@ export interface UpdateEventData {
   parentEl: HTMLElement | null;
 }
 
+export interface RemoveEventData {
+  data: {
+    el: HTMLElement;
+  }[];
+}
+
 export interface SortEventData {
   src: Id;
   dist: Id;
@@ -243,4 +252,9 @@ export interface TargetShadowConfig {
   zIndex?: ZIndex;
   updateDragEl?: UpdateDragEl;
   idPrefix?: string;
+}
+
+export enum AbleActionEventType {
+  SELECT_PARENT = 'select-parent',
+  REMOVE = 'remove',
 }

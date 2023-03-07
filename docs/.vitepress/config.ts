@@ -329,7 +329,7 @@ export default defineConfig({
             },
             {
               text: 'Cascader级联选择器',
-              link: '/form-config/fields/select.md'
+              link: '/form-config/fields/cascader.md'
             },
             {
               text: 'ColorPicker颜色选择器',
@@ -364,6 +364,15 @@ export default defineConfig({
             {
               text: '联动',
               link: '/form-config/relate.md',
+            }
+          ]
+        },
+        {
+          text: '表单对比',
+          items: [
+            {
+              text: '表单对比',
+              link: '/form-config/compare.md',
             }
           ]
         }

@@ -28,6 +28,8 @@ export type FormState = {
   config: FormConfig;
   popperClass?: string;
   initValues: FormValue;
+  lastValues: FormValue;
+  isCompare: boolean;
   values: FormValue;
   $emit: (event: string, ...args: any[]) => void;
   keyProp?: string;
@@ -253,6 +255,7 @@ type RemoteSelectOptionRequestFunction = (
     formValue: any;
     formValues: any;
     config: any;
+    postOptions: Record<string, any>;
   },
 ) => any;
 

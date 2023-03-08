@@ -1,20 +1,27 @@
 <!-- Test.vue -->
 <template>
   <div>
-    <span>component:</span>
-    <span :style="{ color: config.color }">{{ config.text }}</span>
+    <span @click="showStatus">component:</span>
+    <span :style="{ color: props.config.color }">{{ props.config.text }}{{ name }}</span>
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  props: {
-    config: {
-      type: Object,
-      default: () => ({}),
-    },
-  },
-
-  setup() {},
+<script setup>
+import { inject, ref } from 'vue';
+const app = inject('app');
+const props = defineProps(['config']);
+const name = ref('陈健');
+console.log(props.config.id);
+const node = app?.page?.getNode(props.config.id);
+const showName = () => {
+  name.value = '123';
 };
+
+const showStatus = () => {
+  app?.emit('test:show', node, { name: 'chenjian' });
+};
+
+defineExpose({
+  showName,
+});
 </script>

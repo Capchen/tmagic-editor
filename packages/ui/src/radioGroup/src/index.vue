@@ -4,6 +4,7 @@
     <div class="title" style="display: flex; align-items: center; height: 28px; margin-bottom: 12px">
       <i style="font-size: 16px; color: red; margin-right: 5px">*</i>
       <span style="font-size: 16px; color: #222; font-weight: 500">{{ config.text }}</span>
+      <span @click="handleClick">点击我，和测试组件联动{{ visible }}</span>
     </div>
 
     <div class="radio-item">
@@ -47,7 +48,16 @@ export default defineComponent({
   setup(props) {
     const visible = ref(false);
     const app: Core | undefined = useApp(props);
-    // const node = app?.page?.getNode(props.config.id);
+    const node = app?.page?.getNode(props.config.id);
+
+    const handleClick = () => {
+      app?.emit('radioGroup:btnClick', node);
+    };
+    const litteChange = (data: any, params: any) => {
+      console.log(data);
+      console.log(params);
+      visible.value = !visible.value;
+    };
 
     // const openOverlay = () => {
     //   visible.value = true;
@@ -73,7 +83,8 @@ export default defineComponent({
 
     return {
       visible,
-
+      handleClick,
+      litteChange,
       // openOverlay,
       // closeOverlay,
     };
